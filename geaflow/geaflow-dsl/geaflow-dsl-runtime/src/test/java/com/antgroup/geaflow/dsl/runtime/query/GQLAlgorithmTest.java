@@ -19,6 +19,7 @@
 
 package com.antgroup.geaflow.dsl.runtime.query;
 
+
 import com.antgroup.geaflow.common.config.keys.DSLConfigKeys;
 import com.antgroup.geaflow.common.config.keys.FrameworkConfigKeys;
 import com.antgroup.geaflow.file.FileConfigKeys;
@@ -84,6 +85,15 @@ public class GQLAlgorithmTest {
         QueryTester
             .build()
             .withQueryPath("/query/gql_algorithm_006.sql")
+            .execute()
+            .checkSinkResult();
+    }
+
+    @Test
+    public void CycleDetectionTest() throws Exception {
+        QueryTester
+            .build()
+            .withQueryPath("/query/single_node_cycle_detection.sql")
             .execute()
             .checkSinkResult();
     }

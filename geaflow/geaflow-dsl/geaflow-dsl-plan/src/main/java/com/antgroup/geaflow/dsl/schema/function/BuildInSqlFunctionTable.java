@@ -33,6 +33,7 @@ import com.antgroup.geaflow.dsl.udf.graph.KHop;
 import com.antgroup.geaflow.dsl.udf.graph.PageRank;
 import com.antgroup.geaflow.dsl.udf.graph.SingleSourceShortestPath;
 import com.antgroup.geaflow.dsl.udf.graph.TriangleCount;
+import com.antgroup.geaflow.dsl.udf.graph.SingleNodeCycleDetection;
 import com.antgroup.geaflow.dsl.udf.graph.WeakConnectedComponents;
 import com.antgroup.geaflow.dsl.udf.table.agg.PercentileDouble;
 import com.antgroup.geaflow.dsl.udf.table.agg.PercentileInteger;
@@ -210,6 +211,7 @@ public class BuildInSqlFunctionTable extends ListSqlOperatorTable {
             .add(GeaFlowFunction.of(ClosenessCentrality.class))
             .add(GeaFlowFunction.of(WeakConnectedComponents.class))
             .add(GeaFlowFunction.of(TriangleCount.class))
+            .add(GeaFlowFunction.of(SingleNodeCycleDetection.class))
             .add(GeaFlowFunction.of(IncWeakConnectedComponents.class))
             .add(GeaFlowFunction.of(CommonNeighbors.class))
             .add(GeaFlowFunction.of(IncKHopAlgorithm.class))
